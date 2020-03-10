@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>翻转字体</title>
+	<style>
+	  * {
+	  	padding: 0;
+	  	margin: 0;
+	  }
+	  body {
+	  	padding: 200px;
+	  	font: 8rem "微软雅黑";
+	  }
+	  .zhi {
+	  	margin: 0.2rem;
+	  	color: #369;
+	  	position: relative;
+	  }
+	  .zhi:before,.zhi:after{
+	  	content: attr(data-zhi);
+	  	position: absolute;
+	  	top: 0;
+	  	left: 0;
+	  	transform-origin: left top;
+	  	transform: all 0.3 ease 0s;
+	  }
+	  .zhi:before{
+	  	color: #fff;
+	  	z-index: 3;
+	  	transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+
+	  }
+	  .zhi:after {
+	  	color: rgba(0,0,0,0.2);
+	  	transform:scale(1.1,1) routeX(0deg) routeY(0deg) routeZ(0deg);
+	  	z-index: 2;
+	  }
+	  .zhi:hover:before{
+	  	color: #fafafa;
+	  	transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+
+
+	  }
+	  .zhi:hover:after {
+	  	transform:scale(1.1,1) routeX(0deg) routeY(-40deg) skew(0deg,20deg);
+	  }
+	</style>
+</head>
+<body>
+	<span class="zhi" data-zhi="翻">翻</span>
+	<span class="zhi" data-zhi="转">转</span>
+	<span class="zhi" data-zhi="字">字</span>
+	<span class="zhi" data-zhi="体">体</span>
+</body>
+</html>
